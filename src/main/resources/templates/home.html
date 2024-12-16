@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Portfolio</title>
+</head>
+<body>
+<h1>Welcome to my portfolio</h1>
+
+
+<p th:text="'Hello, '+ ${name} +'!'"></p>
+
+<form th:action="@{/processFormVersionTwo}" method="GET">
+    <input type="text" name="studentName" placeholder="Enter your name"/>
+    <input type="submit" value="Submit"/>
+</form>
+</body>
+</html>
