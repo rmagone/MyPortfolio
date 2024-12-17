@@ -9,15 +9,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class HomeController {
-    @GetMapping("/")
-    public String home() {
-        return "index";
-    }
-
-    @RequestMapping("/processForm")
-    public String processForm() {
-        return "processForm";
-    }
 
     @GetMapping("/processFormVersionTwo")
     public String letsShoutDude(@RequestParam("studentName") String theName, Model model) {
