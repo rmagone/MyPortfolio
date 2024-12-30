@@ -1,7 +1,7 @@
 package lv.myportfolio.portfoli.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import lv.myportfolio.portfoli.model.Article;
+import lv.myportfolio.portfoli.model.Articles;
 
-public interface ArticleRepository extends JpaRepository<Article, Long> {
+public interface ArticleRepository extends JpaRepository<Articles, Long> {
 }

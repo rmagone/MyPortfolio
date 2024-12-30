@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Welcome to my portfolio website."/>
+</head>
+<body>
+<section layout:fragment="content">
+    <div class="container my-5">
+        <!-- Article Header -->
+        <header class="text-center mb-5">
+            <h1 class="display-4 fw-bold text-primary" th:text="${article.title}">Article Title</h1>
+            <p class="text-muted fs-5">
+                By <span class="fw-semibold">Author Name</span> |
+                <span class="text-secondary" th:text="${article.post_date}">Published: 29 Dec 2024</span>
+            </p>
+        </header>
+
+        <!-- Article Content -->
+        <article class="mb-5">
+            <img src="/images/article-thumbnail.jpg"
+                 class="img-fluid rounded mx-auto d-block mb-4"
+                 alt="Article Thumbnail">
+            <p class="fs-5 text-justify" th:text="${article.content}">
+            </p>
+        </article>
+    </div>
+</section>
+
+<body/>
+</html>

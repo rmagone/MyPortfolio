@@ -7,19 +7,20 @@
 </head>
 <body>
 <section layout:fragment="content">
-    <div class="container d-flex justify-content-center my-5">
-        <div class="card w-75">
-            <div class="card-header" th:each="card : ${cards}">
-                <h1>Welcome to my portfolio</h1>
+    <div class="container my-5">
+        <div class="card mt-5" th:each="card : ${articles}">
+            <button th:onclick="'location.href=' + '\'' + @{/{id}(id=${card.id})} + '\''"  style="cursor: pointer;">
+            <div class="card-header">
+                <h1 th:text="${card.title}"></h1>
             </div>
-            <img th:src="${card.img_url}}" class="card-img-top" alt="Image">
+            <img th:src="${card.getImg_path}" class="card-img-top" alt="Image">
             <div class="card-body">
-                <h5 class="card-title" th:text="${card.title}">About Me</h5>
-                <p class="card-text" th:text="${card.description}">some random text to be palced from db</p>
+                <p class="card-text" th:text="${card.description}"></p>
             </div>
             <div class="card-footer text-body-secondary">
                 <p>post date:<span th:text="${card.post_date}"></span></p>
             </div>
+            </button>
         </div>
     </div>
 </section>
